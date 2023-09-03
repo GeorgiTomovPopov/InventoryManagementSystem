@@ -61,6 +61,15 @@ public class LoginFrame extends JFrame implements ActionListener {
             pwdText = String.valueOf(passwordField.getPassword());
             if (userText.equalsIgnoreCase("admin") && pwdText.equalsIgnoreCase("admin")) {
                 JOptionPane.showMessageDialog(this, "Login Successful");
+
+                MainFrame frame = new MainFrame();
+                frame.setTitle("Inventory Management");
+                frame.setVisible(true);
+                frame.setBounds(30, 30, 1600, 960);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+
+                this.dispose();
                 //HERE WE NEED TO HOOK THE NEXT WINDOW
             } else {
                 JOptionPane.showMessageDialog(this, "Invalid Username or Password");
