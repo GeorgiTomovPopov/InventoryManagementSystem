@@ -12,7 +12,11 @@ public class MainFrame extends JFrame implements ActionListener {
     JButton customerButton = new JButton("CUSTOMER");
     JButton orderButton = new JButton("ORDER");
     JButton usersButton = new JButton("USERS");
-    MainFrame() {
+
+    String user;
+
+    MainFrame(String userText) {
+        this.user = userText;
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
@@ -36,7 +40,10 @@ public class MainFrame extends JFrame implements ActionListener {
         container.add(categoryButton);
         container.add(customerButton);
         container.add(orderButton);
-        container.add(usersButton);
+
+        if (user.equals("admin")) {
+            container.add(usersButton);
+        }
     }
 
     public void addActionEvent() {

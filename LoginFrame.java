@@ -60,10 +60,10 @@ public class LoginFrame extends JFrame implements ActionListener {
             String pwdText;
             userText = userTextField.getText();
             pwdText = String.valueOf(passwordField.getPassword());
-            if (userText.equalsIgnoreCase("admin") && pwdText.equalsIgnoreCase("admin")) {
+            if (userText.equalsIgnoreCase("admin") || userText.equalsIgnoreCase("user") && pwdText.equalsIgnoreCase("123")) {
                 JOptionPane.showMessageDialog(this, "Login Successful");
 
-                MainFrame frame = new MainFrame();
+                MainFrame frame = new MainFrame(userText);
                 frame.setTitle("Inventory Management");
                 frame.setVisible(true);
                 frame.setBounds(30, 30, 1600, 960);
