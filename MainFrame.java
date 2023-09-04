@@ -15,6 +15,9 @@ public class MainFrame extends JFrame implements ActionListener {
 
     String user;
 
+    JPanel panel = new JPanel();
+
+
     MainFrame(String userText) {
         this.user = userText;
         setLayoutManager();
@@ -33,6 +36,9 @@ public class MainFrame extends JFrame implements ActionListener {
         customerButton.setBounds(205 , 5, 100, 20);
         orderButton.setBounds(305 , 5, 100, 20);
         usersButton.setBounds(405 , 5, 100, 20);
+        panel.setLayout(null);
+        panel.setBounds(0, 25, 1590, 935);
+        panel.setBackground(Color.BLUE); //This is added to differentiate the panel
     }
 
     public void addComponentsToContainer() {
@@ -40,6 +46,7 @@ public class MainFrame extends JFrame implements ActionListener {
         container.add(categoryButton);
         container.add(customerButton);
         container.add(orderButton);
+        container.add(panel);
 
         if (user.equals("admin")) {
             container.add(usersButton);
